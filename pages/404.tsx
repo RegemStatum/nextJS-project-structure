@@ -1,15 +1,15 @@
 import Link from "next/link";
 import React from "react";
 
-const AllProducts = () => {
+const Error = () => {
   return (
     <div>
-      AllProducts{" "}
+      This page doesnt exist!{" "}
       <Link href="/">
         <a>To home</a>
-      </Link>
+      </Link>{" "}
     </div>
   );
 };
 
-export default AllProducts;
+export default Error;

@@ -11,9 +11,6 @@ const SingleProduct: NextPage = () => {
     <div>
       SingleProduct index is : {productId}
       <Link href={"/"}>
-        <a>To Index</a>
-      </Link>
-      <Link href={"/home"}>
         <a>To Home Page</a>
       </Link>
     </div>
