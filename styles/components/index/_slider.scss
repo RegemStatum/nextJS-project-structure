@@ -1,0 +1,113 @@
+@use "../../abstracts/" as *;
+
+.slider {
+  margin-bottom: getMargin(1000);
+  grid-column: 1/-1;
+  color: #fff;
+  overflow: hidden;
+  cursor: grab;
+  @include borderRadius1;
+  @include boxShadow3;
+
+  &__slide {
+    padding: getPadding(1200) getPadding(800) getPadding(1700) getPadding(800);
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    @include sm {
+      padding: getPadding(1300) getPadding(1000) 72px getPadding(1000);
+    }
+  }
+
+  &__dark-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  }
+
+  &__name,
+  &__text {
+    z-index: 2;
+  }
+
+  &__name {
+    margin-bottom: getMargin(1000);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include text(600);
+
+    @include md {
+      @include text(700);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    @include text(400);
+    line-height: 123%;
+
+    @include md {
+      @include text(500);
+    }
+  }
+
+  // swiper module styles
+  .swiper {
+    background-color: getColor("pr-prl-9");
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+
+    &-pagination-bullets {
+      position: absolute;
+      bottom: getMargin(1000);
+      left: 50%;
+      transform: translateX(-50%);
+      height: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: getMargin(200);
+      z-index: 2;
+
+      @include sm {
+        bottom: getMargin(1200);
+      }
+    }
+
+    &-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      background-color: #fff;
+      border-radius: 50%;
+
+      &-active {
+        width: 8px;
+        height: 8px;
+        background-color: getColor("pr-prl-5");
+        box-shadow: inset 0 0 1px 1px #fff;
+      }
+    }
+  }
+
+  @include xmd {
+    height: max-content;
+    grid-column: 1/5;
+    grid-row: 2;
+    margin-right: getMargin(400);
+    margin-top: calc(242px + getMargin(800));
+  }
+}

@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+.home-page {
+  &__cocktail-card {
+    max-height: 422px;
+
+    @include xmd {
+      grid-column: 5/-1;
+      grid-row: 2;
+      margin-left: getMargin(400);
+    }
+  }
+}

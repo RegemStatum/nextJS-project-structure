@@ -1,0 +1,20 @@
+@use "../../abstracts/" as *;
+
+.more-cocktails-btn {
+  max-height: 56px;
+  margin-top: calc(-1 * getMargin(800));
+  margin-bottom: getMargin(1000);
+  padding: getPadding(800) 0;
+  grid-column: 1/-1;
+  overflow: hidden;
+  text-shadow: none;
+  @include text(400);
+  @include boxShadow3;
+
+  @include xmd {
+    grid-column: 5/-1;
+    grid-row: 2;
+    margin-top: calc(422px + getMargin(300));
+    margin-left: getMargin(400);
+  }
+}

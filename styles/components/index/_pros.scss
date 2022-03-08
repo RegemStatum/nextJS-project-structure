@@ -1,0 +1,29 @@
+@use "../../abstracts/" as *;
+
+.pros {
+  max-height: 242px;
+  margin-bottom: getMargin(1000);
+  grid-column: 1/-1;
+  background-color: #fff;
+  overflow: hidden;
+  @include borderRadius1;
+  @include boxShadow3;
+
+  &__item:nth-child(odd) {
+    background-color: getColor("pr-tel-10");
+  }
+
+  &__text {
+    @include text(300);
+    line-height: 0.9;
+    color: getColor("nt-4");
+    padding: getPadding(1000);
+  }
+
+  @include xmd {
+    grid-column: 1/5;
+    grid-row: 2;
+    margin-right: getMargin(400);
+    margin-bottom: getMargin(800);
+  }
+}
